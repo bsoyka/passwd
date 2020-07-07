@@ -1,6 +1,6 @@
 # passwd
 [![Testing with pytest](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)](https://github.com/bsoyka/passwd/actions)
-[![PyPI Version](https://img.shields.io/pypi/v/passwd)](https://pypi.org/project/passwd)
+[![Version 0.2.1](https://img.shields.io/badge/version-0.2.1-orange)](https://github.com/bsoyka/passwd/releases/tag/v0.2.1)
 [![MIT License](https://img.shields.io/pypi/l/passwd)](LICENSE)
 [![Docs on GitHub](https://img.shields.io/badge/docs-on%20github-blue)](https://github.com/bsoyka/passwd/wiki)
 [![GitHub Issues](https://img.shields.io/github/issues/bsoyka/passwd)](https://github.com/bsoyka/passwd/issues)

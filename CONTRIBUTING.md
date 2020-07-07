@@ -12,6 +12,7 @@
       - [Your first contribution](#your-first-contribution)
       - [Formatting and testing](#formatting-and-testing)
       - [Adding tests](#adding-tests)
+  - [Creating a new release](#creating-a-new-release)
 
 ## Code of conduct
 This project is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
@@ -48,21 +49,47 @@ Unsure where to start? Try taking a look at issues labeled [![good first issue](
 #### Formatting and testing
 First, make sure you have all the dev dependencies installed:
 
-```sh
+```console
 $ python -m pip install -r requirements.txt
 ```
 
 This project uses [`autopep8`](https://pypi.org/project/autopep8/) for formatting. To format a file:
 
-```sh
+```console
 $ autopep8 --in-place FILENAME.py
 ```
 
 This project also uses [`pytest`](https://pypi.org/project/pytest/) for testing. To run all the tests:
 
-```sh
+```console
 $ pytest
 ```
 
 #### Adding tests
 To add tests, create a `test_*.py` file in the `tests/` directory. Follow the format of the previous files and see [this section](#formatting-and-testing) to learn how to run the tests.
+
+## Creating a new release
+This checklist is for maintainers when preparing a new release to GitHub and PyPI.
+
+- [ ] Use `bump2version` to update the version string in all files.
+
+```console
+$ bumpversion patch
+```
+
+- [ ] Use the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format to add notes to the `CHANGELOG.md` file. Use the new version string generated in the previous step.
+- [ ] Reinstall the package for local development with the new version number.
+
+```console
+$ python -m pip install -e .
+```
+
+- [ ] Run all the tests.
+
+```console
+$ pytest
+```
+
+- [ ] Commit the changelog and version bump changes
+- [ ] Push to GitHub
+- [ ] Create a release on GitHub using [this template](https://github.com/bsoyka/passwd/releases/new?tag=vMAJOR.MINOR.PATCH&title=Concise%20release%20title&body=%23%23%23%20Added%0A-%20Release%20notes%20%28copy%20from%20CHANGELOG.md%29). The tag should be named `v{version_string}`. Making a release will automatically push the release to PyPI.
