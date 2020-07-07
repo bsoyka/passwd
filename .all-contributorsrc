@@ -17,6 +17,16 @@
         "test",
         "doc"
       ]
+    },
+    {
+      "login": "echang97",
+      "name": "echang97",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/51372089?v=4",
+      "profile": "https://github.com/echang97",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
