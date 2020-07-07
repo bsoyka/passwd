@@ -1,1 +1,7 @@
-requests~=2.24.0
+# Install the current directory as an editable package
+-e .
+# Also installs project dependencies from setup.py
+
+# Dev dependencies
+autopep8~=1.5.3
+pytest~=5.4.3

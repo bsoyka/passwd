@@ -41,5 +41,8 @@ setuptools.setup(
     project_urls={
         "Documentation": "https://github.com/bsoyka/passwd/wiki",
         "Changelog": "https://github.com/bsoyka/passwd/blob/master/CHANGELOG.md"
-    }
+    },
+    install_requires=[
+        "requests~=2.24.0"
+    ]
 )
