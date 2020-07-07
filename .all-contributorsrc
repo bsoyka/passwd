@@ -24,5 +24,5 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "badgeTemplate: "\[!\[Testing with pytest\](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)\](https://github.com/bsoyka/passwd/actions) \[!\[Contributors\](https://img.shields.io/badge/contributors-<%= contributors.length %>-orange.svg)\](#contributors-) \[!\[Gitter\](https://badges.gitter.im/bsoyka/passwd.svg)\](https://gitter.im/bsoyka/passwd)"
+  "badgeTemplate: "[![Testing with pytest](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)](https://github.com/bsoyka/passwd/actions) [![Contributors](https://img.shields.io/badge/contributors-<%= contributors.length %>-orange.svg)](#contributors-) [![Gitter](https://badges.gitter.im/bsoyka/passwd.svg)](https://gitter.im/bsoyka/passwd)"
 }
