@@ -25,13 +25,13 @@ def check_password(password: str) -> int:
 
 
 class PasswordRequirements:
-    def __init__(self, *, min_length: int = 0, min_digits: int = 0, min_special: int = 0, min_alpha: int = 0, min_uppercase: int = 0, min_lowercase: int = 0):
+    def __init__(self, *, min_length: int = 0, min_digits: int = 0, min_special: int = 0, min_alpha: int = 0, min_upper: int = 0, min_lower: int = 0):
         self.min_length = min_length
         self.min_digits = min_digits
         self.min_special = min_special
         self.min_alpha = min_alpha
-        self.min_uppercase = min_uppercase
-        self.min_lowercase = min_lowercase
+        self.min_upper = min_upper
+        self.min_lower = min_lower
 
     def check(self, password: str):
         if len(password) < self.min_length:
@@ -50,11 +50,11 @@ class PasswordRequirements:
             return False
         
         upper_chars = sum(v for k, v in Counter(password).items() if k in ascii_uppercase)
-        if upper_chars < self.min_uppercase:
+        if upper_chars < self.min_upper:
             return False
         
         lower_chars = sum(v for k, v in Counter(password).items() if k in ascii_lowercase)
-        if lower_chars < self.min_lowercase:
+        if lower_chars < self.min_lower:
             return False
         
         return True
