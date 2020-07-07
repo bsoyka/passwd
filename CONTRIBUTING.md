@@ -43,7 +43,7 @@ This includes completely new features and minor enhancements to existing code. E
 ### Making code contributions
 
 #### Your first contribution
-Unsure where to start? Try taking a look at these [good first issues](https://github.com/bsoyka/passwd/labels/good%20first%20issue).
+Unsure where to start? Try taking a look at issues labeled [![good first issue](https://img.shields.io/github/labels/bsoyka/passwd/good%20first%20issue)](https://github.com/bsoyka/passwd/labels/good%20first%20issue).
 
 #### Formatting and testing
 This project uses [`autopep8`](https://pypi.org/project/autopep8/) for formatting. To format a file:
