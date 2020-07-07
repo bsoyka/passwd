@@ -39,7 +39,7 @@ def test_min_alpha():
     assert not alpha_4.check("aBc123")
 
 def test_min_uppercase():
-    upper_3 = PasswordRequirements(min_uppercase=3)
+    upper_3 = PasswordRequirements(min_upper=3)
     
     assert upper_3.check("ABC")
     assert upper_3.check("ABCD")
@@ -48,7 +48,7 @@ def test_min_uppercase():
     assert not upper_3.check("ABc")
     
 def test_min_lowercase():
-    lower_3 = PasswordRequirements(min_lowercase=3)
+    lower_3 = PasswordRequirements(min_lower=3)
     
     assert lower_3.check("abc")
     assert lower_3.check("abcd")
