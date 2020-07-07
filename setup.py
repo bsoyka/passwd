@@ -38,4 +38,8 @@ setuptools.setup(
         "Operating System :: OS Independent"
     ],
     python_requires='>=3.6',
+    project_urls={
+        "Documentation": "https://github.com/bsoyka/passwd/wiki",
+        "Changelog": "https://github.com/bsoyka/passwd/blob/master/CHANGELOG.md"
+    }
 )
