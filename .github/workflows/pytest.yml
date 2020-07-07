@@ -26,6 +26,6 @@ jobs:
         pip install flake8 pytest
         pip install -r requirements.txt
     - name: Test with pytest
-      run: |
-        pip install .
-        pytest
+      uses: fylein/python-pytest-github-action@v1
+      with:
+        args: pytest
