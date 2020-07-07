@@ -1,9 +1,15 @@
 # passwd
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![Testing with pytest](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)](https://github.com/bsoyka/passwd/actions) [![All Contributors](https://img.shields.io/badge/contributors-1-orange.svg)](#contributors-) [![Gitter](https://badges.gitter.im/bsoyka/passwd.svg)](https://gitter.im/bsoyka/passwd)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![Testing with pytest](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)](https://github.com/bsoyka/passwd/actions) [![Gitter](https://badges.gitter.im/bsoyka/passwd.svg)](https://gitter.im/bsoyka/passwd)
 
 Assorted utilities for gracefully handling and generating passwords
+
+## Contributing
+Please see the [code of conduct](CODE_OF_CONDUCT.md) and [contributing guidelines](CONTRIBUTING.md) for information on contributing to `passwd`.
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/contributors-1-orange.svg)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
