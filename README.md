@@ -1,6 +1,6 @@
 # passwd
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![Testing with pytest](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)](https://github.com/bsoyka/passwd/actions) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors-)
+[![Testing with pytest](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)](https://github.com/bsoyka/passwd/actions) [![All Contributors](https://img.shields.io/badge/contributors-1-orange.svg)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Assorted utilities for gracefully handling and generating passwords
