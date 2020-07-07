@@ -1,8 +1,8 @@
 # passwd
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 ![Testing with pytest](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Assorted utilities for gracefully handling and generating passwords
 ## Contributors ✨
