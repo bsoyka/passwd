@@ -3,7 +3,7 @@ __version__ = "0.2.1"
 import hashlib
 from collections import Counter
 from re import findall
-from string import punctuation
+from string import punctuation, ascii_letters, ascii_uppercase, ascii_lowercase
 
 import requests
 
@@ -25,10 +25,13 @@ def check_password(password: str) -> int:
 
 
 class PasswordRequirements:
-    def __init__(self, *, min_length: int = 0, min_digits: int = 0, min_special: int = 0):
+    def __init__(self, *, min_length: int = 0, min_digits: int = 0, min_special: int = 0, min_alpha: int = 0, min_uppercase: int = 0, min_lowercase: int = 0):
         self.min_length = min_length
         self.min_digits = min_digits
         self.min_special = min_special
+        self.min_alpha = min_alpha
+        self.min_uppercase = min_uppercase
+        self.min_lowercase = min_lowercase
 
     def check(self, password: str):
         if len(password) < self.min_length:
@@ -41,5 +44,17 @@ class PasswordRequirements:
         special_chars = sum(v for k, v in Counter(password).items() if k in punctuation)
         if special_chars < self.min_special:
             return False
-
+        
+        alpha_chars = sum(v for k, v in Counter(password).items() if k in ascii_letters)
+        if alpha_chars < self.min_alpha:
+            return False
+        
+        upper_chars = sum(v for k, v in Counter(password).items() if k in ascii_uppercase)
+        if upper_chars < self.min_uppercase:
+            return False
+        
+        lower_chars = sum(v for k, v in Counter(password).items() if k in ascii_lowercase)
+        if lower_chars < self.min_lowercase:
+            return False
+        
         return True
