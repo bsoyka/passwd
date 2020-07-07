@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="passwd",
-    version="0.2.1",
+    version="0.3.0",
     author="Benjamin Soyka",
     author_email="bensoyka@icloud.com",
     description="Assorted utilities for gracefully handling and generating passwords",
