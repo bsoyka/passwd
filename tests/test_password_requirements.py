@@ -28,8 +28,34 @@ def test_special_characters():
 
     assert not special_1.check("abc")
     assert not special_1.check("abc123")
+    
+def test_min_alpha():
+    alpha_4 = PasswordRequirements(min_alpha=4)
+    
+    assert alpha_4.check("abcd123")
+    assert alpha_4.check("aBcD123")
+    
+    assert not alpha_4.check("aBc$%^")
+    assert not alpha_4.check("aBc123")
 
-
+def test_min_uppercase():
+    upper_3 = PasswordRequirements(min_uppercase=3)
+    
+    assert upper_3.check("ABC")
+    assert upper_3.check("ABCD")
+    
+    assert not upper_3.check("Abc")
+    assert not upper_3.check("ABc")
+    
+def test_min_lowercase():
+    lower_3 = PasswordRequirements(min_lowercase=3)
+    
+    assert lower_3.check("abc")
+    assert lower_3.check("abcd")
+    
+    assert not lower_3.check("ABC")
+    assert not lower_3.check("abC")
+    
 def test_combinations():
     length_6_digits_3 = PasswordRequirements(min_length=6, min_digits=3)
 
