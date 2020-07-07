@@ -46,21 +46,21 @@ This includes completely new features and minor enhancements to existing code. E
 Unsure where to start? Try taking a look at issues labeled [![good first issue](https://img.shields.io/github/labels/bsoyka/passwd/good%20first%20issue)](https://github.com/bsoyka/passwd/labels/good%20first%20issue).
 
 #### Formatting and testing
+First, make sure you have all the dev dependencies installed:
+
+```sh
+$ python -m pip install -r requirements.txt
+```
+
 This project uses [`autopep8`](https://pypi.org/project/autopep8/) for formatting. To format a file:
 
 ```sh
-$ python -m pip install --upgrade autopep8
-
 $ autopep8 --in-place FILENAME.py
 ```
 
 This project also uses [`pytest`](https://pypi.org/project/pytest/) for testing. To run all the tests:
 
 ```sh
-$ python -m pip install --upgrade pytest
-
-$ python -m pip install -e .
-
 $ pytest
 ```
 
