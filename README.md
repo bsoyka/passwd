@@ -9,7 +9,7 @@
 Assorted utilities for gracefully handling and generating passwords
 
 ## Contributing
-Please see the [code of conduct](CODE_OF_CONDUCT.md) and [contributing guidelines](CONTRIBUTING.md) for information on contributing to `passwd`.
+Please see the [code of conduct](https://github.com/bsoyka/passwd/blob/master/CODE_OF_CONDUCT.md) and [contributing guidelines](https://github.com/bsoyka/passwd/blob/master/CONTRIBUTING.md) for information on contributing to `passwd`.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
