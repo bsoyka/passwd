@@ -19,8 +19,9 @@ def check_password(password: str) -> int:
     hash_suffix_list = [x.split(":") for x in response.text.splitlines(False)]
 
     try:
-        count = [count for suffix,
-                 count in hash_suffix_list if sha1.endswith(suffix.lower())][0]
+        count = [
+            count for suffix, count in hash_suffix_list if sha1.endswith(suffix.lower())
+        ][0]
     except IndexError:
         return 0
 
@@ -28,7 +29,16 @@ def check_password(password: str) -> int:
 
 
 class PasswordRequirements:
-    def __init__(self, *, min_length: int = 0, min_digits: int = 0, min_special: int = 0, min_alpha: int = 0, min_upper: int = 0, min_lower: int = 0):
+    def __init__(
+        self,
+        *,
+        min_length: int = 0,
+        min_digits: int = 0,
+        min_special: int = 0,
+        min_alpha: int = 0,
+        min_upper: int = 0,
+        min_lower: int = 0,
+    ):
         self.min_length = min_length
         self.min_digits = min_digits
         self.min_special = min_special
@@ -44,23 +54,23 @@ class PasswordRequirements:
         if digits < self.min_digits:
             return False
 
-        special_chars = sum(v for k, v in Counter(
-            password).items() if k in punctuation)
+        special_chars = sum(v for k, v in Counter(password).items() if k in punctuation)
         if special_chars < self.min_special:
             return False
 
-        alpha_chars = sum(v for k, v in Counter(
-            password).items() if k in ascii_letters)
+        alpha_chars = sum(v for k, v in Counter(password).items() if k in ascii_letters)
         if alpha_chars < self.min_alpha:
             return False
 
-        upper_chars = sum(v for k, v in Counter(
-            password).items() if k in ascii_uppercase)
+        upper_chars = sum(
+            v for k, v in Counter(password).items() if k in ascii_uppercase
+        )
         if upper_chars < self.min_upper:
             return False
 
-        lower_chars = sum(v for k, v in Counter(
-            password).items() if k in ascii_lowercase)
+        lower_chars = sum(
+            v for k, v in Counter(password).items() if k in ascii_lowercase
+        )
         if lower_chars < self.min_lower:
             return False
 
@@ -68,7 +78,14 @@ class PasswordRequirements:
 
 
 class PasswordGenerator:
-    def __init__(self, length: int, uppercase: bool = True, lowercase: bool = True, digits: bool = True, special: bool = True):
+    def __init__(
+        self,
+        length: int,
+        uppercase: bool = True,
+        lowercase: bool = True,
+        digits: bool = True,
+        special: bool = True,
+    ):
         self.length = length
         self.uppercase = uppercase
         self.lowercase = lowercase

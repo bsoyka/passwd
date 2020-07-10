@@ -16,14 +16,12 @@ setuptools.setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent"
+        "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
     project_urls={
         "Documentation": "https://github.com/bsoyka/passwd/wiki",
-        "Changelog": "https://github.com/bsoyka/passwd/blob/master/CHANGELOG.md"
+        "Changelog": "https://github.com/bsoyka/passwd/blob/master/CHANGELOG.md",
     },
-    install_requires=[
-        "requests~=2.24.0"
-    ]
+    install_requires=["requests~=2.24.0"],
 )

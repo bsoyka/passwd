@@ -31,16 +31,14 @@ def test_strange_values():
     assert len(upper_yes.generate()) == 64
 
     # Assert there is at least one uppercase char in a long password
-    assert sum(1 for char in upper_yes.generate()
-               if char in ascii_uppercase) > 0
+    assert sum(1 for char in upper_yes.generate() if char in ascii_uppercase) > 0
 
     lower_0 = PasswordGenerator(64, lowercase=0)
     assert len(lower_0) == 64
     assert len(lower_0.generate()) == 64
 
     # Assert there are no lowercase chars in a long password
-    assert sum(1 for char in lower_0.generate()
-               if char in ascii_lowercase) == 0
+    assert sum(1 for char in lower_0.generate() if char in ascii_lowercase) == 0
 
 
 def test_exclusions():
