@@ -1,4 +1,5 @@
 # passwd
+
 [![Testing with pytest](https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push)](https://github.com/bsoyka/passwd/actions)
 [![Version 0.4.0](https://img.shields.io/badge/version-0.4.0-orange)](https://github.com/bsoyka/passwd/releases/tag/v0.4.0)
 [![MIT License](https://img.shields.io/pypi/l/passwd)](LICENSE)
@@ -9,6 +10,7 @@
 Assorted utilities for gracefully handling and generating passwords
 
 ## Contributing
+
 Please see the [code of conduct](https://github.com/bsoyka/passwd/blob/master/CODE_OF_CONDUCT.md) and [contributing guidelines](https://github.com/bsoyka/passwd/blob/master/CONTRIBUTING.md) for information on contributing to `passwd`.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
