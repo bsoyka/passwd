@@ -3,7 +3,10 @@ __version__ = "0.3.0"
 import hashlib
 from collections import Counter
 from re import findall
-from string import punctuation, ascii_letters, ascii_uppercase, ascii_lowercase
+from secrets import choice
+from string import ascii_letters, ascii_lowercase, ascii_uppercase
+from string import digits as all_digits
+from string import punctuation
 
 import requests
 
@@ -41,20 +44,53 @@ class PasswordRequirements:
         if digits < self.min_digits:
             return False
 
-        special_chars = sum(v for k, v in Counter(password).items() if k in punctuation)
+        special_chars = sum(v for k, v in Counter(
+            password).items() if k in punctuation)
         if special_chars < self.min_special:
             return False
-        
-        alpha_chars = sum(v for k, v in Counter(password).items() if k in ascii_letters)
+
+        alpha_chars = sum(v for k, v in Counter(
+            password).items() if k in ascii_letters)
         if alpha_chars < self.min_alpha:
             return False
-        
-        upper_chars = sum(v for k, v in Counter(password).items() if k in ascii_uppercase)
+
+        upper_chars = sum(v for k, v in Counter(
+            password).items() if k in ascii_uppercase)
         if upper_chars < self.min_upper:
             return False
-        
-        lower_chars = sum(v for k, v in Counter(password).items() if k in ascii_lowercase)
+
+        lower_chars = sum(v for k, v in Counter(
+            password).items() if k in ascii_lowercase)
         if lower_chars < self.min_lower:
             return False
-        
+
         return True
+
+
+class PasswordGenerator:
+    def __init__(self, length: int, uppercase: bool = True, lowercase: bool = True, digits: bool = True, special: bool = True):
+        self.length = length
+        self.uppercase = uppercase
+        self.lowercase = lowercase
+        self.digits = digits
+        self.special = special
+
+    def generate(self):
+        allowed_chars = ""
+
+        if self.uppercase:
+            allowed_chars += ascii_uppercase
+
+        if self.lowercase:
+            allowed_chars += ascii_lowercase
+
+        if self.digits:
+            allowed_chars += all_digits
+
+        if self.special:
+            allowed_chars += punctuation
+
+        return "".join(choice(allowed_chars) for _ in range(self.length))
+
+    def __len__(self):
+        return self.length if self.length >= 0 else 0
