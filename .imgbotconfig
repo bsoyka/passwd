@@ -1,0 +1,6 @@
+{
+    "ignoredFiles": [
+        "docs/*",
+        "source/_build/*"
+    ]
+}
