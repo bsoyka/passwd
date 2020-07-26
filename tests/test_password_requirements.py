@@ -1,3 +1,5 @@
+from secrets import token_urlsafe
+
 from passwd import PasswordRequirements
 
 
@@ -69,3 +71,27 @@ def test_combinations():
     assert not length_6_digits_3.check("ab123")
     assert not length_6_digits_3.check("abcd12")
     assert not length_6_digits_3.check("ab12")
+
+
+def test_custom_func():
+    def length_3_8(password):
+        if 3 < len(password) < 8:
+            return True
+        return False
+
+    custom_func = PasswordRequirements(func=length_3_8)
+
+    assert custom_func.check("12345")
+    assert not custom_func.check("1")
+    assert not custom_func.check("123456789")
+
+
+def test_check_breaches():
+    check_breaches = PasswordRequirements(check_breaches=True)
+
+    exposed_passwords = ["12345", "password", "drowssap", "!@#$%^&*()"]
+    for password in exposed_passwords:
+        assert not check_breaches.check(password)
+
+    for _ in range(3):
+        assert check_breaches.check(token_urlsafe(32))

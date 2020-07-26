@@ -5,9 +5,9 @@ passwd
 .. image:: https://github.com/bsoyka/passwd/workflows/Testing%20with%20pytest/badge.svg?event=push
    :target: https://github.com/bsoyka/passwd/actions
    :alt: Testing with pytest
-.. image:: https://img.shields.io/badge/version-1.0.0-orange
-   :target: https://github.com/bsoyka/passwd/releases/tag/v1.0.0
-   :alt: Version 1.0.0
+.. image:: https://img.shields.io/badge/version-1.1.0-orange
+   :target: https://github.com/bsoyka/passwd/releases/tag/v1.1.0
+   :alt: Version 1.1.0
 .. image:: https://img.shields.io/pypi/l/passwd
    :target: https://github.com/bsoyka/passwd/blob/master/LICENSE
    :alt: MIT License

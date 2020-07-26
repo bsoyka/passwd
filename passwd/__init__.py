@@ -1,4 +1,4 @@
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 import hashlib
 from collections import Counter
@@ -50,9 +50,8 @@ class PasswordRequirements:
         min_alpha (int): The minimum number of alphabetical characters in the password
         min_upper (int): The minimum number of uppercase letters in the password
         min_lower (int): The minimum number of lowercase letters in the password
-
-    Todo:
-        Use the :meth:`~passwd.check_password` method as a requirement option
+        check_breaches (bool): Whether to ensure that passwords aren't found in known data breaches (uses :meth:`~passwd.check_password`)
+        func (function): A function that takes in a password (:class:`str`) and returns a :class:`bool` that must be ``True`` for the password to meet all requirements
     """
 
     def __init__(
@@ -64,6 +63,8 @@ class PasswordRequirements:
         min_alpha=0,
         min_upper=0,
         min_lower=0,
+        check_breaches=False,
+        func=None,
     ):
         self.min_length = min_length
         self.min_digits = min_digits
@@ -71,6 +72,8 @@ class PasswordRequirements:
         self.min_alpha = min_alpha
         self.min_upper = min_upper
         self.min_lower = min_lower
+        self.check_breaches = check_breaches
+        self.func = func
 
     def check(self, password):
         """Check a password against the requirements
@@ -108,6 +111,14 @@ class PasswordRequirements:
         )
         if lower_chars < self.min_lower:
             return False
+
+        if self.check_breaches:
+            if check_password(password):
+                return False
+
+        if self.func:
+            if not self.func(password):
+                return False
 
         return True
 
