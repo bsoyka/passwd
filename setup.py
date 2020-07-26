@@ -19,7 +19,7 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     project_urls={
-        "Documentation": "https://github.com/bsoyka/passwd/wiki",
+        "Documentation": "https://bsoyka.github.io/passwd",
         "Changelog": "https://github.com/bsoyka/passwd/blob/master/CHANGELOG.md",
     },
     install_requires=["requests~=2.24.0"],
