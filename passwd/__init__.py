@@ -150,6 +150,9 @@ class PasswordGenerator:
 
         Returns:
             str: The freshly generated password
+
+        Todo:
+            Allow overriding of each option directly in the :meth:`~passwd.PasswordGenerator.generate` call
         """
         allowed_chars = ""
 
