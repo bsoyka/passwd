@@ -145,7 +145,9 @@ class PasswordGenerator:
         self.digits = digits
         self.special = special
 
-    def generate(self):
+    def generate(
+        self, length=0, uppercase=None, lowercase=None, digits=None, special=None
+    ):
         """Generate a random password
 
         Returns:
@@ -154,18 +156,29 @@ class PasswordGenerator:
         Todo:
             Allow overriding of each option directly in the :meth:`~passwd.PasswordGenerator.generate` call
         """
+        if length <= 0:
+            length = self.length
+        
         allowed_chars = ""
 
-        if self.uppercase:
+        if uppercase != None:
+            allowed_chars += ascii_uppercase if uppercase else ""
+        elif self.uppercase:
             allowed_chars += ascii_uppercase
 
-        if self.lowercase:
+        if lowercase != None:
+            allowed_chars += ascii_lowercase if lowercase else ""
+        elif self.lowercase:
             allowed_chars += ascii_lowercase
 
-        if self.digits:
+        if digits != None:
+            allowed_chars += all_digits if digits else ""
+        elif self.digits:
             allowed_chars += all_digits
 
-        if self.special:
+        if special != None:
+            allowed_chars += punctuation if special else ""
+        elif self.special:
             allowed_chars += punctuation
 
         return "".join(choice(allowed_chars) for _ in range(self.length))
