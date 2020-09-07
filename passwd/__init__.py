@@ -146,17 +146,21 @@ class PasswordGenerator:
         self.special = special
 
     def generate(
-        self, length=0, uppercase=None, lowercase=None, digits=None, special=None
+        self, length=None, uppercase=None, lowercase=None, digits=None, special=None
     ):
         """Generate a random password
 
+        Keyword Args:
+            length (int): The length of the password
+            uppercase (bool): Whether to allow uppercase letters in the password
+            lowercase (bool): Whether to allow lowercase letters in the password
+            digits (bool): Whether to allow numerical digits in the password
+            special (bool): Whether to allow special characters in the password
+
         Returns:
             str: The freshly generated password
-
-        Todo:
-            Allow overriding of each option directly in the :meth:`~passwd.PasswordGenerator.generate` call
         """
-        if length <= 0:
+        if length == None:
             length = self.length
         
         allowed_chars = ""
@@ -181,7 +185,7 @@ class PasswordGenerator:
         elif self.special:
             allowed_chars += punctuation
 
-        return "".join(choice(allowed_chars) for _ in range(self.length))
+        return "".join(choice(allowed_chars) for _ in range(length))
 
     def __len__(self):
         return self.length if self.length >= 0 else 0
