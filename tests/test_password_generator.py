@@ -83,7 +83,7 @@ def test_override():
     assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in ascii_lowercase) > 0
     
     # Assert that there are no digits in generated password
-    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in ascii_lowercase) == 0
+    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in digits) == 0
     
     # Assert there is at least one special char in generated password
     assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in punctuation) > 0
