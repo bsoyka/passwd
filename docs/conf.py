@@ -21,8 +21,8 @@ project = 'passwd'
 copyright = '2020, Benjamin Soyka'
 author = 'Benjamin Soyka'
 
-version = '1.1.0'
-release = '1.1.0'
+version = '1.1.1'
+release = '1.1.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -37,6 +37,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.viewcode'
 ]
+
+master_doc = 'index'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

@@ -5,7 +5,7 @@ with open("README.rst", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="passwd",
-    version="1.1.0",
+    version="1.1.1",
     author="Benjamin Soyka",
     author_email="bensoyka@icloud.com",
     description="Assorted utilities for gracefully handling and generating passwords",
@@ -19,7 +19,7 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     project_urls={
-        "Documentation": "https://bsoyka.github.io/passwd",
+        "Documentation": "https://passwd.readthedocs.io/",
         "Changelog": "https://github.com/bsoyka/passwd/blob/master/CHANGELOG.md",
     },
     install_requires=["requests~=2.24.0"],
