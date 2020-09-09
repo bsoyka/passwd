@@ -21,8 +21,8 @@ project = 'passwd'
 copyright = '2020, Benjamin Soyka'
 author = 'Benjamin Soyka'
 
-version = '1.1.0'
-release = '1.1.0'
+version = '1.1.1'
+release = '1.1.1'
 
 
 # -- General configuration ---------------------------------------------------
