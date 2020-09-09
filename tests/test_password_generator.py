@@ -57,3 +57,33 @@ def test_exclusions():
     no_digits_16 = PasswordGenerator(16, digits=False)
     for char in digits:
         assert char not in no_digits_16.generate()
+
+
+def test_override():
+    length_override = PasswordGenerator(8)
+    # len() is required to return == 14
+    assert len(length_override.generate(14)) == 14
+
+    # Assert there is at least one uppercase char in a long password
+    upper_override_true = PasswordGenerator(64, uppercase=False)
+    assert sum(1 for char in upper_override_true.generate(uppercase=True) if char in ascii_uppercase) > 0
+
+    # Assert there are no special chars in a long password
+    special_override_false = PasswordGenerator(64, special=True)
+    assert sum(1 for char in special_override_false.generate(special=False) if char in punctuation) == 0
+
+    pass_gen = PasswordGenerator(24, uppercase=False, digits=False)
+    # len() is required to return == 24
+    assert len(pass_gen.generate(uppercase=True, lowercase=True)) == 24
+    
+    # Assert there is at least one uppercase char in generated password
+    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in ascii_uppercase) > 0
+    
+    # Assert there is at least one lowercase char in generated password
+    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in ascii_lowercase) > 0
+    
+    # Assert that there are no digits in generated password
+    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in ascii_lowercase) == 0
+    
+    # Assert there is at least one special char in generated password
+    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in punctuation) > 0
