@@ -20,7 +20,7 @@ setuptools.setup(
     python_requires=">=3.6",
     project_urls={
         "Documentation": "https://passwd.readthedocs.io/",
-        "Changelog": "https://github.com/bsoyka/passwd/blob/master/CHANGELOG.md",
+        "Changelog": "https://github.com/bsoyka/passwd/releases",
     },
     install_requires=["requests~=2.24.0"],
 )
