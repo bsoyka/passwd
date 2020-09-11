@@ -17,7 +17,7 @@
 
 ## Code of conduct
 
-This project is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+This project is governed by our [Code of Conduct](https://github.com/bsoyka/.github/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
 ## Ask questions on Gitter
 

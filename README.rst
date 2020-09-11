@@ -33,5 +33,5 @@ Contributing
 
 Please see the `code of conduct`_ and `contributing guidelines`_ for information on contributing to ``passwd``.
 
-.. _code of conduct: https://github.com/bsoyka/passwd/blob/master/CODE_OF_CONDUCT.md
+.. _code of conduct: https://github.com/bsoyka/.github/blob/master/CODE_OF_CONDUCT.md
 .. _contributing guidelines: https://github.com/bsoyka/passwd/blob/master/CONTRIBUTING.md
