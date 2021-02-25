@@ -160,27 +160,27 @@ class PasswordGenerator:
         Returns:
             str: The freshly generated password
         """
-        if length == None:
+        if length is None:
             length = self.length
         
         allowed_chars = ""
 
-        if uppercase != None:
+        if uppercase is not None:
             allowed_chars += ascii_uppercase if uppercase else ""
         elif self.uppercase:
             allowed_chars += ascii_uppercase
 
-        if lowercase != None:
+        if lowercase is not None:
             allowed_chars += ascii_lowercase if lowercase else ""
         elif self.lowercase:
             allowed_chars += ascii_lowercase
 
-        if digits != None:
+        if digits is not None:
             allowed_chars += all_digits if digits else ""
         elif self.digits:
             allowed_chars += all_digits
 
-        if special != None:
+        if special is not None:
             allowed_chars += punctuation if special else ""
         elif self.special:
             allowed_chars += punctuation
