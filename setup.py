@@ -22,5 +22,5 @@ setuptools.setup(
         "Documentation": "https://passwd.readthedocs.io/",
         "Changelog": "https://github.com/bsoyka/passwd/releases",
     },
-    install_requires=["requests~=2.24.0"],
+    install_requires=["requests~=2.25.1"],
 )
