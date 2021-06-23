@@ -3,7 +3,9 @@ description: Create a report to help us improve
 labels: [bug]
 body:
   - type: markdown
-    value: Thanks for taking the time to fill out this bug report!
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
   - type: textarea
     id: description
     attributes:
