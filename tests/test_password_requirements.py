@@ -75,9 +75,7 @@ def test_combinations():
 
 def test_custom_func():
     def length_3_8(password):
-        if 3 < len(password) < 8:
-            return True
-        return False
+        return 3 < len(password) < 8
 
     custom_func = PasswordRequirements(func=length_3_8)
 
