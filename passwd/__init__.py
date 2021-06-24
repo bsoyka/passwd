@@ -112,13 +112,11 @@ class PasswordRequirements:
         if lower_chars < self.min_lower:
             return False
 
-        if self.check_breaches:
-            if check_password(password):
-                return False
+        if self.check_breaches and check_password(password):
+            return False
 
-        if self.func:
-            if not self.func(password):
-                return False
+        if self.func and not self.func(password):
+            return False
 
         return True
 

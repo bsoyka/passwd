@@ -31,14 +31,14 @@ def test_strange_values():
     assert len(upper_yes.generate()) == 64
 
     # Assert there is at least one uppercase char in a long password
-    assert sum(1 for char in upper_yes.generate() if char in ascii_uppercase) > 0
+    assert sum(char in ascii_uppercase for char in upper_yes.generate()) > 0
 
     lower_0 = PasswordGenerator(64, lowercase=0)
     assert len(lower_0) == 64
     assert len(lower_0.generate()) == 64
 
     # Assert there are no lowercase chars in a long password
-    assert sum(1 for char in lower_0.generate() if char in ascii_lowercase) == 0
+    assert sum(char in ascii_lowercase for char in lower_0.generate()) == 0
 
 
 def test_exclusions():
@@ -66,24 +66,65 @@ def test_override():
 
     # Assert there is at least one uppercase char in a long password
     upper_override_true = PasswordGenerator(64, uppercase=False)
-    assert sum(1 for char in upper_override_true.generate(uppercase=True) if char in ascii_uppercase) > 0
+    assert (
+        sum(
+            char in ascii_uppercase
+            for char in upper_override_true.generate(uppercase=True)
+        )
+        > 0
+    )
+
 
     # Assert there are no special chars in a long password
     special_override_false = PasswordGenerator(64, special=True)
-    assert sum(1 for char in special_override_false.generate(special=False) if char in punctuation) == 0
+    assert (
+        sum(
+            char in punctuation
+            for char in special_override_false.generate(special=False)
+        )
+        == 0
+    )
+
 
     pass_gen = PasswordGenerator(24, uppercase=False, digits=False)
     # len() is required to return == 24
     assert len(pass_gen.generate(uppercase=True, lowercase=True)) == 24
-    
+
     # Assert there is at least one uppercase char in generated password
-    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in ascii_uppercase) > 0
-    
+    assert (
+        sum(
+            char in ascii_uppercase
+            for char in pass_gen.generate(uppercase=True, lowercase=True)
+        )
+        > 0
+    )
+
+
     # Assert there is at least one lowercase char in generated password
-    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in ascii_lowercase) > 0
-    
+    assert (
+        sum(
+            char in ascii_lowercase
+            for char in pass_gen.generate(uppercase=True, lowercase=True)
+        )
+        > 0
+    )
+
+
     # Assert that there are no digits in generated password
-    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in digits) == 0
-    
+    assert (
+        sum(
+            char in digits
+            for char in pass_gen.generate(uppercase=True, lowercase=True)
+        )
+        == 0
+    )
+
+
     # Assert there is at least one special char in generated password
-    assert sum(1 for char in pass_gen.generate(uppercase=True, lowercase=True) if char in punctuation) > 0
+    assert (
+        sum(
+            char in punctuation
+            for char in pass_gen.generate(uppercase=True, lowercase=True)
+        )
+        > 0
+    )
