@@ -19,7 +19,7 @@ def test_length():
     assert len(all_0.generate()) == 0
 
 def test_no_character_types_selected():    #Added a test case when all character types are set to False
-    with raises(ValueError,match="No character types selected for password genration."):
+    with raises(ValueError,match="No character types selected for password generation."):
         PasswordGenerator(8,uppercase=False, lowercase=False, digits=False,special=False).generate()
 
 def test_strange_values():
