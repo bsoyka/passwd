@@ -182,7 +182,8 @@ class PasswordGenerator:
             allowed_chars += punctuation if special else ""
         elif self.special:
             allowed_chars += punctuation
-
+        if not allowed_chars:
+            raise ValueError("No character types selected for password generation.")     #Error Handling
         return "".join(choice(allowed_chars) for _ in range(length))
 
     def __len__(self):
